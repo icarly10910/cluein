@@ -11,11 +11,12 @@ class Clothing(models.Model):
     color = models.CharField(max_length=20, blank=True)
     size = models.CharField(max_length=20, blank=True)
     weather = models.CharField(max_length=10, choices=weatherChoices, default="SOLD")    #available, sold, restocking
-    issues = models.CharField(max_length=100, default ="No issues") 
+    
     class Meta:
         abstract = True
-def __str__(self):
-    return "Type : {0} Price : {1}.format(self.type"
+
+    def __str__(self):
+        return 'Type : {0} Price : {1}'.format(self.type, self.price)
 
 class Shirts(Clothing):
     pass

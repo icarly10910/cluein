@@ -1,21 +1,24 @@
 {% extends 'base.html' %}
 
 {% block body %}
+
 <br>
+
 <div class="button-group">
 
-    <a href="#" class="btn btn-primary btn-md" role="button">Shirts</a>
-    <a href="#" class="btn btn-warning btn-sm" role="button">+</a>
+    <a href="{% url 'display_shirts' %}" class="btn btn-primary btn-md" role="button">Shirts</a>
+    <a href="{% url 'add_shirts'%}" class="btn btn-warning btn-sm" role="button">+</a>
 
-    <a href="#" class="btn btn-primary btn-md" role="button">Pants</a>
-    <a href="#" class="btn btn-warning btn-sm" role="button">+</a>
+    <a href="{% url 'display_pants' %}" class="btn btn-primary btn-md" role="button">Pants</a>
+    <a href="{% url 'add_pants'%}" class="btn btn-warning btn-sm" role="button">+</a>
 
-    <a href="#" class="btn btn-primary btn-md" role="button">Shoes</a>
-    <a href="#" class="btn btn-warning btn-sm" role="button">+</a>
+    <a href="{% url 'display_shoes' %}" class="btn btn-primary btn-md" role="button">Shoes</a>
+    <a href="{% url 'add_shoes'%}" class="btn btn-warning btn-sm" role="button">+</a>
+
 </div>
 
 <br>
-
+<h4>Currently Viewing: {{ header }} in your closet</h4>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -28,7 +31,16 @@
     </thead>
 
     <tbody>
-        
+        {% for item in items %}
+        <tr>
+            <td>{{ item.pk }}</td> 
+            <td>{{ item.type }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.color }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.weather }}</td>
+        </tr>
+        {% endfor %}
     </tbody>
 </table>
 
