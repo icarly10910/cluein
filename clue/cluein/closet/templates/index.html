@@ -1,6 +1,27 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<<<<<<< HEAD
+
+<br>
+
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked> 
+            <a href="{% url 'display_shirts' %}" class="btn btn-outline-light btn-md" role="button">Shirts</a>
+            <a href="{% url 'add_shirts'%}" class="btn btn-warning btn-sm" role="button">+</a>
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off">
+            <a href="{% url 'display_pants' %}" class="btn btn-outline-light btn-md" role="button">Pants</a>
+            <a href="{% url 'add_pants'%}" class="btn btn-warning btn-sm" role="button">+</a>
+        </label>
+        <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"> 
+            <a href="{% url 'display_shoes' %}" class="btn btn-outline-light btn-md" role="button">Shoes</a>
+            <a href="{% url 'add_shoes'%}" class="btn btn-warning btn-sm" role="button">+</a>
+        </label>
+=======
 
 <br>
 
@@ -15,22 +36,56 @@
     <a href="{% url 'display_shoes' %}" class="btn btn-primary btn-md" role="button">Shoes</a>
     <a href="{% url 'add_shoes'%}" class="btn btn-warning btn-sm" role="button">+</a>
 
+>>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
 </div>
-
 <br>
+<<<<<<< HEAD
+<br>
+=======
+>>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
 <h4>Currently Viewing: {{ header }} in your closet</h4>
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>id</th>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Price</th>
             <th>Color</th>
             <th>Size</th>
-            <th>Weather</th>
-            <th>Status</th>
+            <th>Weather-Type</th>
         </tr>
     </thead>
 
     <tbody>
+<<<<<<< HEAD
+
+        {% for item in items %}
+
+        <tr>
+            <td>{{ item.pk }}
+            <td>{{ item.type }}</td>
+            <td>{{ item.price }} $</td>
+            <td>{{ item.color }}</td>
+            <td>{{ item.size }}</td>
+            <td>{{ item.weather }}</td>
+            
+            {% if header|lower == "shirts" %}
+            <td>
+                <a href="{% url 'edit_shirts' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+                <a href="{% url 'delete_shirts' item.pk %}" class="btn btn-danger btn-sm" role="button">Del</a>
+            </td>
+            {% elif header|lower == "pants" %}
+            <td>
+                <a href="{% url 'edit_pants' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+                <a href="{% url 'delete_shirts' item.pk %}" class="btn btn-danger btn-sm" role="button">Del</a>
+            </td>
+            {% else %}
+            <td>
+                <a href="{% url 'edit_shoes' item.pk %}" class="btn btn-warning btn-sm" role="button">Edit</a>
+                <a href="{% url 'delete_shirts' item.pk %}" class="btn btn-danger btn-sm" role="button">Del</a>
+            </td>
+            {% endif %}
+=======
         {% for item in items %}
         <tr>
             <td>{{ item.pk }}</td> 
@@ -39,6 +94,7 @@
             <td>{{ item.color }}</td>
             <td>{{ item.size }}</td>
             <td>{{ item.weather }}</td>
+>>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
         </tr>
         {% endfor %}
     </tbody>

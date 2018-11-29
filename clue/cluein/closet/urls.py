@@ -10,5 +10,18 @@ urlpatterns =[
 
     url(r'^add_shirts$', add_shirts, name='add_shirts'),
     url(r'^add_pants$', add_pants, name='add_pants'),
+<<<<<<< HEAD
+    url(r'^add_shoes$', add_shoes, name='add_shoes'),
+
+    url(r'^edit_shirts/(?P<pk>\d+)$', edit_shirts, name="edit_shirts"),
+    url(r'^edit_pants/(?P<pk>\d+)$', edit_pants, name="edit_pants"),
+    url(r'^edit_shoes/(?P<pk>\d+)$', edit_shoes, name="edit_shoes"),
+
+    url(r'^delete_shirts/(?P<pk>\d+)$', delete_shirts, name="delete_shirts"),
+    url(r'^delete_pants/(?P<pk>\d+)$', delete_pants, name="delete_pants"),
+    url(r'^delete_shoes/(?P<pk>\d+)$', delete_shoes, name="delete_shoes")
+]
+=======
     url(r'^add_shoes$', add_shoes, name='add_shoes')
 ]
+>>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
