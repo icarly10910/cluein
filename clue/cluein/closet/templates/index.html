@@ -57,7 +57,6 @@
     </thead>
 
     <tbody>
-<<<<<<< HEAD
 
         {% for item in items %}
 
@@ -85,16 +84,6 @@
                 <a href="{% url 'delete_shirts' item.pk %}" class="btn btn-danger btn-sm" role="button">Del</a>
             </td>
             {% endif %}
-=======
-        {% for item in items %}
-        <tr>
-            <td>{{ item.pk }}</td> 
-            <td>{{ item.type }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.color }}</td>
-            <td>{{ item.size }}</td>
-            <td>{{ item.weather }}</td>
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
         </tr>
         {% endfor %}
     </tbody>

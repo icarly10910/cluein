@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
-=======
-from django.shortcuts import render, redirect
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
 from .models import *
 from .forms import *
 
@@ -10,13 +6,8 @@ from .forms import *
 def index(request):
     return render(request, 'index.html')
 
-<<<<<<< HEAD
 def display_clothing(request, article):
     items = article.objects.all()
-=======
-def display_shirts(request):
-    items = Shirts.objects.all()
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
     context = {
         'items' : items,
         'header' : 'Shirts'
@@ -24,7 +15,6 @@ def display_shirts(request):
 
     return render(request, 'index.html', context)
 
-<<<<<<< HEAD
 def add_clothing(request, article):
     if request.method == "POST":
         form = article(request.POST)
@@ -56,18 +46,10 @@ def delete_clothing(request, pk, model):
 
     context = {
         'items': items
-=======
-def display_pants(request):
-    items = Pants.objects.all()
-    context = {
-        'items' : items,
-        'header' : 'Pants',
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
     }
 
     return render(request, 'index.html', context)
 
-<<<<<<< HEAD
 
 
 def display_shirts(request):
@@ -80,27 +62,6 @@ def display_shoes(request):
     return display_clothing(request, Shoes)
     
 
-=======
-def display_shoes(request):
-    items = Shoes.objects.all()
-    context = {
-        'items' : items,
-        'header' : 'Shoes',
-    }
-
-    return render(request, 'index.html', context)
-
-def add_clothing(request, clas):
-    if request.method == "POST":
-        form = clas(request.POST)
-
-        if form.is_valid():
-            form.save()
-            return redirect('index')
-    else:
-        form = clas()
-        return render(request, 'add_new.html', {'form': form})
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
 
 def add_shirts(request):
     return add_clothing(request, ShirtsForm)
@@ -111,7 +72,6 @@ def add_pants(request):
 def add_shoes(request):
     return add_clothing(request, ShoesForm)
 
-<<<<<<< HEAD
 
 
 def edit_shirts(request,pk):
@@ -132,26 +92,3 @@ def delete_pants(request, pk):
 
 def delete_shoes(request, pk):
     return delete_clothing(request, pk, Shoes)
-=======
-# def add_pants(request):
-#     if request.method == "POST":
-#         form = PantsForm(request.POST)
-
-#         if form.is_valid():
-#             form.save()
-#             return redirect('index')
-#     else:
-#         form = PantsForm()
-#         return render(request, 'add_new.html', {'form': form})
-
-# def add_shoes(request):
-#     if request.method == "POST":
-#         form = ShoesForm(request.POST)
-
-#         if form.is_valid():
-#             form.save()
-#             return redirect('index')
-#     else:
-#         form = ShoesForm()
-#         return render(request, 'add_new.html', {'form': form})
->>>>>>> a7647f2b30c6f419ef45dc499d1bc19a4d38cdf5
